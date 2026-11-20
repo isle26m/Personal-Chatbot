@@ -4,7 +4,7 @@ import { pipeline, TextGenerationPipeline } from "@huggingface/transformers";
 import ChatModule, {
   Bubble as BubbleModule,
   useMessages,
-  MessageProps,
+  type MessageProps,
 } from "@chatui/core";
 
 import botImage from "/botImage.jpg";
