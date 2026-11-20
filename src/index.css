@@ -1,0 +1,92 @@
+@import "@chatui/core/dist/index.css";
+
+:root {
+    --font-family: "Google Sans Flex", sans-serif;
+    --brand-1: #93c5fd;
+    --brand-2: #bfdbfe;
+    --brand-3: #dbeafe;
+    --white: #000000;
+    --gray-1: #f9fafb;
+    --gray-2: #9ca3af;
+    --gray-7: #1f2937;
+    --gray-8: #000000;
+}
+
+html {
+    font-size: 125% !important;
+}
+
+.ChatApp {
+    zoom: 1.25;
+}
+
+.ChatApp,
+.ChatApp input,
+.ChatApp textarea,
+.ChatApp button {
+    font-family: "Google Sans Flex", sans-serif !important;
+}
+
+.ChatApp,
+.MessageList,
+.PullToRefresh,
+.Navbar,
+.ChatFooter,
+.Composer {
+    background-color: #000000 !important;
+    color: #f9fafb !important;
+}
+
+.Navbar-title {
+    color: #f9fafb !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.ChatFooter,
+.Composer {
+    border-top: 1px solid #27272a !important;
+}
+
+.Composer-input {
+    background-color: #111111 !important;
+    color: #f9fafb !important;
+}
+
+.Message.left .Bubble {
+    background-color: #444 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.Message.right .Bubble {
+    background-color: #1e293b !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.Composer .Composer-sendBtn,
+.Composer-actions .Composer-sendBtn,
+.Composer-inputWrap .Composer-sendBtn {
+    display: inline-flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    background-color: #bfdbfe !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+.Composer .Composer-sendBtn:hover {
+    background-color: #93c5fd !important;
+}
+
+.Composer .Composer-sendBtn:disabled {
+    background-color: #1e293b !important;
+    color: #64748b !important;
+    opacity: 0.7 !important;
+}
+
+.Message .Avatar img {
+    border-radius: 100%;
+}
