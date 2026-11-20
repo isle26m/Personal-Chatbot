@@ -54,11 +54,12 @@ const initialMessages: Omit<MessageProps, "_id">[] = [
 ];
 
 export default function App() {
-  const { messages, appendMsg, updateMsg, deleteMsg, setTyping } =
+  const { messages, appendMsg, updateMsg, deleteMsg } =
     useMessages(initialMessages);
   const generatorRef = useRef<TextGenerationPipeline | null>(null);
   const [modelReady, setModelReady] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [, setIsTyping] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -112,7 +113,7 @@ export default function App() {
 
     const loadingId = `loading-${Date.now()}`;
     setIsGenerating(true);
-    setTyping(true);
+    setIsTyping(true);
 
     appendMsg({
       _id: loadingId,
@@ -159,7 +160,7 @@ export default function App() {
         }
       }
 
-      setTyping(false);
+      setIsTyping(false);
       updateMsg(loadingId, {
         type: "text",
         content: { text: replyText },
@@ -167,7 +168,7 @@ export default function App() {
         user: botUser,
       });
     } catch {
-      setTyping(false);
+      setIsTyping(false);
       deleteMsg(loadingId);
       appendMsg({
         type: "text",
